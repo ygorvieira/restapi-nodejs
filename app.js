@@ -1,8 +1,10 @@
 const express = require('express'),
       mongoose = require('mongoose'),
+      bodyParser = require('body-parser'),
       produtoRouter = require('./routes/produtoRoutes');
 
 var app = express();
+app.use(bodyParser.json());
 var router = express.Router();
 
 var url = "mongodb://ygorvieira:senha@ds161551.mlab.com:61551/ygorprodutosdb";

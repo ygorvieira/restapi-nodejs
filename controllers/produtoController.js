@@ -1,6 +1,6 @@
 var Produto = require('../models/produtoModel');
 
-var get = ((req, res) => {
+var get = (req, res) => {
     Produto.find((err, produtos) => {
         if(err)
         {
@@ -13,9 +13,9 @@ var get = ((req, res) => {
             res.send(produtos);
         }
     });
-});
+};
 
-var getById = ((req, res) => {
+var getById = (req, res) => {
     Produto.findById(req.params.id, (err, produto) => {
         if(err)
         {
@@ -28,9 +28,9 @@ var getById = ((req, res) => {
             res.send(produto);
         }
     });
-});
+};
 
-var add = ((req, res) => {
+var add = (req, res) => {
     var produto = new Produto(req.body);
 
     produto.save((err) => {
@@ -45,7 +45,7 @@ var add = ((req, res) => {
             res.send(produto);
         }
     });
-});
+};
 
 module.exports = {
     add: add,
